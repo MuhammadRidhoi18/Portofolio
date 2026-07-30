@@ -426,37 +426,39 @@
   .panel-gallery{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:24px;}
 /* --- Wadah untuk membuat gambar berbaris --- */
 /* --- Wadah untuk membuat gambar berbaris --- */
+/* --- Wadah galeri agar berbaris menyamping --- */
 .galeri-baris {
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 15px !important;
+    gap: 20px !important;
     margin-top: 15px !important;
+    align-items: center !important; /* Membuat logo dan poster sejajar di tengah */
 }
 
-/* --- Pengaturan gambar di dalam galeri agar SEUKURAN (Grid Seragam) --- */
+/* --- Pengaturan ukuran gambar agar RASIO ASLI (Tidak Terpotong) --- */
 .galeri-baris img {
-    width: 250px !important;      /* Kunci lebar gambar */
-    height: 250px !important;     /* Kunci tinggi gambar */
-    object-fit: cover !important; /* Memotong otomatis agar pas tanpa gepeng */
+    height: 280px !important; /* Kita kunci tingginya saja agar rapi berjejer */
+    width: auto !important;   /* Lebarnya akan menyesuaikan otomatis tanpa gepeng/terpotong */
     border-radius: 10px !important;
     cursor: pointer !important;
     transition: all 0.3s ease-in-out !important;
 }
 
-/* --- Efek Pop-up saat disentuh (Khusus Galeri) --- */
+/* --- Efek Pop-up Khusus Galeri --- */
 .galeri-baris img:hover {
     transform: scale(1.05) !important;
     box-shadow: 0 10px 20px rgba(0,0,0,0.5) !important;
-    z-index: 10 !important;
 }
 
-/* --- Pengaturan Logo Penutup (Gambar paling bawah) --- */
+/* --- Sembunyikan Logo Raksasa Bawaan Template di Bawah --- */
 .panel > img {
-    width: auto !important;
-    max-width: 100% !important;
-    max-height: 200px !important; /* Mengecilkan logo di bawah agar tidak raksasa */
-    border-radius: 10px !important;
-    margin-top: 30px !important;
+    display: none !important;
+}
+
+/* --- Sembunyikan Titik Bullet Kecil di Samping Galeri --- */
+.panel .pbody li:has(.galeri-baris),
+.panel .pbody li:nth-child(2) {
+    list-style-type: none !important;
 }
 
   /* ===================== MOTION SYSTEM ===================== */
@@ -762,7 +764,7 @@ const workData = [
     desc:['Membuat materi visual dan konten grafis untuk kebutuhan brand dan pemasaran perusahaan.'], tags:['Photoshop','Illustrator'] },
   { role:'Sosmed Specialist', org:'Lophita Cake & Bakery', period:'Januari 2025 — Juli 2025', loc:'WFH, Indonesia',
     desc:['Mengelola konten dan strategi media sosial, termasuk perencanaan konten dan desain visual.'], tags:['Content Planning','Canva'] },
-  
+
 ];
 
 /* EDIT: isi data magang kamu di sini jika ada */
@@ -778,9 +780,9 @@ const projectData = [
       title: 'KLASSI', 
       meta: 'Kategori · Tools', 
       img: 'logo klassi.png', 
-     desc: [
+     ddesc: [
     'Developed business idea with 5 group members called Klassi. Klassi is a clothing brand that provides design with information in order to educate people. As a result won The Best Business Idea for 2023.',
-    '<div class="galeri-baris"><img src="GEARBRAKAN-26-JULI.jpg"></div>' 
+    '<div class="galeri-baris"><img src="GEARBRAKAN-26-JULI.jpg"><img src="logo klassi.png"></div>' 
   ], 
     },
   { chip:'Project', title:'Nama Project 2', meta:'Kategori · Tools', img:'https://picsum.photos/seed/proj2/600/450', desc:['Deskripsi singkat project ini.'], tags:['Tag1','Tag2'] },
