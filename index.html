@@ -424,17 +424,29 @@
   .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:20px;}
   .tags span{font-size:12px; border:1px solid var(--border); border-radius:6px; padding:6px 13px; color:var(--text-dim);}
   .panel-gallery{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:24px;}
-.panel-gallery img {
-    width: 100% !important;
-    max-width: 500px !important;
+/* --- Wadah untuk membuat gambar berbaris --- */
+.galeri-baris {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    margin-top: 20px !important;
+    align-items: center !important;
+}
+
+/* --- Pengaturan ukuran gambar agar proporsional --- */
+.panel img {
+    width: auto !important;
+    max-width: 100% !important;
     height: auto !important;
+    max-height: 350px !important;
     border-radius: 10px !important;
     cursor: pointer !important;
     position: relative !important;
     transition: all 0.3s ease-in-out !important; 
 }
 
-.panel-gallery img:hover {
+/* --- Efek Pop-up saat disentuh --- */
+.panel img:hover {
     transform: scale(1.05) !important;
     box-shadow: 0 15px 30px rgba(0,0,0,0.6) !important;
     z-index: 10 !important;
@@ -760,10 +772,9 @@ const projectData = [
       meta: 'Kategori · Tools', 
       img: 'logo klassi.png', 
       desc: [
-        'Developed business idea with 5 group members called Klassi. Klassi is a clothing brand that provides design with information in order to educate people. As a result won The Best Business Idea for 2023.',
-        '<img src="GEARBRAKAN-26-JULI.jpg">',
-        '<img src="nama-file-tambahan-1.jpg">'
-      ], 
+    'Developed business idea with 5 group members called Klassi. Klassi is a clothing brand that provides design with information in order to educate people. As a result won The Best Business Idea for 2023.',
+    '<div class="galeri-baris"> <img src="GEARBRAKAN-26-JULI.jpg"> <img src="logo klassi.png"> </div>' // <-- Semua gambar disatukan dalam satu tanda kutip di sini
+  ],
       tags: ['Tag1', 'Tag2'] 
     }, // <--- INI KOMA YANG HILANG (SANGAT PENTING!) 
 },
