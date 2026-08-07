@@ -423,21 +423,30 @@
   .panel .pbody li{margin-bottom:8px;}
   .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:20px;}
   .tags span{font-size:12px; border:1px solid var(--border); border-radius:6px; padding:6px 13px; color:var(--text-dim);}
-  .panel-gallery{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:24px;}
-.panel-gallery img {
-    width: 100% !important;
-    max-width: 500px !important;
-    height: auto !important;
-    border-radius: 10px !important;
-    cursor: pointer !important;
-    position: relative !important;
-    transition: all 0.3s ease-in-out !important; 
+  .panel-gallery{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:16px;
+    margin-top:24px;
+    max-width:1100px;
+    align-items:start;
 }
 
-.panel-gallery img:hover {
-    transform: scale(1.05) !important;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.6) !important;
-    z-index: 10 !important;
+.panel-gallery img{
+    width:100%;
+    height:auto;
+    max-width:none;
+    display:block;
+    border-radius:10px;
+    cursor:pointer;
+    position:relative;
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.panel-gallery img:hover{
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:0 15px 30px rgba(0,0,0,.45);
+    z-index:2;
 }
 
   /* ===================== MOTION SYSTEM ===================== */
